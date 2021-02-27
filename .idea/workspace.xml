@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bd14717c-15d9-412f-9e95-3670cffd1f52" name="Default Changelist" comment="" />
+    <list default="true" id="bd14717c-15d9-412f-9e95-3670cffd1f52" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proton_bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/proton_bot.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1oEfwprBPIPoLrk6EUiMUTYQH5m" />
   <component name="ProjectViewState">
@@ -15,6 +22,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -70,7 +78,10 @@
       <workItem from="1613638774003" duration="2368000" />
       <workItem from="1613641291904" duration="1728000" />
       <workItem from="1613668704600" duration="397000" />
-      <workItem from="1613669553695" duration="6995000" />
+      <workItem from="1613669553695" duration="7555000" />
+      <workItem from="1614372531077" duration="3700000" />
+      <workItem from="1614377716951" duration="6796000" />
+      <workItem from="1614385734552" duration="3144000" />
     </task>
     <servers />
   </component>
