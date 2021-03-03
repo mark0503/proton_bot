@@ -1,3 +1,5 @@
+import time
+
 import requests
 import telebot
 from telebot import types
@@ -8,7 +10,8 @@ from captcha.image import ImageCaptcha
 import matplotlib.pyplot as plt
 import random
 import os
-import time
+from eospy.cleos import Cleos
+
 
 token = '1659221040:AAFktjak6604fFt2pzgdwUY4T_rDPjuUaJo'
 bot = telebot.TeleBot('1659221040:AAFktjak6604fFt2pzgdwUY4T_rDPjuUaJo')
@@ -18,9 +21,21 @@ number_list = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 
 alphabet_lowercase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't','u', 'v', 'w', 'x', 'y', 'z']
 
-
 user_list = []
 captcha_list = []
+
+
+def eos(url='http://testnet.protonchain.com:80'):
+    ce = Cleos(url).get_info()
+    return ce.get('chain_id')
+
+
+def balance(url='http://testnet.protonchain.com:80'):
+    a = 'mark1'
+    ce = Cleos(url)
+    ce = ce.get_currency_balance(account='mark1', symbol='XPR')
+    return ce
+
 
 def create_random_captcha_text(captcha_string_size=6):
     captcha_string_list = []
@@ -79,6 +94,8 @@ def start_captcha(message):
             message.from_user.id,
             "Вы проходили капчу"
         )
+
+
 def check_captcha(message):
     if message.text == captcha_list[-1]:
         bot.send_message(message.from_user.id, "Капча пройдена")
@@ -96,6 +113,14 @@ def check_captcha(message):
 @mwt(timeout=60*60)
 def get_admin_ids(bot, chat_id):
     return [admin.user.id for admin in bot.get_chat_administrators(chat_id)]
+
+
+@bot.message_handler(commands=['balance'])
+def dsfsdf(message):
+    bot.send_message(
+        message.from_user.id,
+        balance(),
+    )
 
 
 @bot.message_handler(commands=['start'])
@@ -119,7 +144,6 @@ Proton Team
         disable_web_page_preview=True,
         reply_markup=keyboard,
     )
-    bot.delete_message(message.chat.id, message.message_id)
     if message.chat.id == GROUP_ID:
         bot.delete_message(message.chat.id, message.message_id)
 
