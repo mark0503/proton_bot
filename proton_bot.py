@@ -1,3 +1,4 @@
+import math
 import time
 
 import requests
@@ -11,18 +12,22 @@ import matplotlib.pyplot as plt
 import random
 import os
 from eospy.cleos import Cleos
+from random import randint
 
 
 token = '1659221040:AAFktjak6604fFt2pzgdwUY4T_rDPjuUaJo'
 bot = telebot.TeleBot('1659221040:AAFktjak6604fFt2pzgdwUY4T_rDPjuUaJo')
 GROUP_ID = -1001381698561
-
+i = 10
+fin = 100000
 number_list = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+price = ''
 
 alphabet_lowercase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't','u', 'v', 'w', 'x', 'y', 'z']
 
 user_list = []
 captcha_list = []
+prize_user_list = []
 
 
 def eos(url='http://testnet.protonchain.com:80'):
@@ -31,7 +36,6 @@ def eos(url='http://testnet.protonchain.com:80'):
 
 
 def balance(url='http://testnet.protonchain.com:80'):
-    a = 'mark1'
     ce = Cleos(url)
     ce = ce.get_currency_balance(account='mark1', symbol='XPR')
     return ce
@@ -78,6 +82,75 @@ def create_image_captcha(captcha_text):
 
     image_file = "image/captcha_" + captcha_text + ".png"
     image_captcha.write(captcha_text, image_file)
+
+
+@bot.message_handler(commands=["price"])
+def inline(message):
+    key = types.InlineKeyboardMarkup()
+    but_1 = types.InlineKeyboardButton(text="Submit", callback_data="Submit")
+    key.add(but_1)
+    bot.send_message(message.chat.id, "Участвовать", reply_markup=key)
+
+
+@bot.callback_query_handler(func=lambda call: True)
+def inline(call):
+    if call.data == 'Submit':
+        if call.from_user.id not in prize_user_list:
+            prize_user_list.append(call.from_user.id)
+            global i
+            i -= 1
+            if i > 0:
+                global fin
+                res = randint(1, 100)
+                a = fin * res / 100
+                fin -= int(a)
+                name = call.from_user.first_name
+                price_msg = f"""
+                                <b>{name} выиграл {int(a)}</b>
+                                """
+                re = bot.send_message(
+                    call.message.chat.id,
+                    price_msg,
+                    parse_mode='html',
+                )
+                time.sleep(5)
+                bot.delete_message(re.chat.id, re.message_id)
+
+            else:
+                re = bot.send_message(
+                    call.message.chat.id,
+                    "все"
+                )
+                time.sleep(5)
+                bot.delete_message(re.chat.id, re.message_id)
+        else:
+            bot.answer_callback_query(callback_query_id=call.id, text="Вы уже забради бонус..", show_alert=True)
+
+
+tip_dict = dict()
+
+
+@bot.message_handler(commands=['tip'])
+def first_q(message):
+    send = bot.send_message(message.chat.id, 'Кому отправить?')
+    bot.register_next_step_handler(send, two_q)
+
+
+def two_q(message):
+    global answers
+    answers = []
+    first_answer = message.text
+    answers.append(first_answer)
+
+    send = bot.send_message(message.chat.id, 'Сколько отправить?')
+    bot.register_next_step_handler(send, end)
+
+
+def end(message):
+    four_answer = message.text
+    answers.append(four_answer)
+    res = f"""Вы отправили {answers[0]} {answers[1]} XPR"""
+    bot.send_message(message.chat.id, res)
 
 
 @bot.message_handler(commands=['ver'])
@@ -131,9 +204,7 @@ def start_message(message):
     name = message.from_user.first_name
     WELCOME_MESSAGE = f"""
     <b>{name}! Welcome to the PROTON telegram!</b>  
-
 You can find the exchanges PROTON is listed on <a href="protonchain.com">here</a>.
-
 Regards, 
 Proton Team
     """
@@ -239,4 +310,3 @@ def handle_sticker(message):
 
 
 bot.polling()
-
