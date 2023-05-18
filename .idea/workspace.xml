@@ -2,17 +2,42 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd14717c-15d9-412f-9e95-3670cffd1f52" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/db_connect.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/script/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/script/create_db.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tg_bot/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tg_bot/core.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tg_bot/handlers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/bot_utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/captcha_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/test.py.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/test.py.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/captcha_4b2v5z.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/captcha_6bxyv6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/captcha_djz2y8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/captcha_ozzly4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/proton_bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/proton_bot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/captcha_0vhhl9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/captcha_4dll47.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/captcha_4zpu53.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/captcha_iyob9n.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/captcha_jddkn2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/captcha_xr7rmk.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proton_bot.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -28,13 +53,14 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../hw_fin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
@@ -104,17 +130,23 @@
       <workItem from="1615917251008" duration="12785000" />
       <workItem from="1615960580196" duration="2644000" />
       <workItem from="1616154215054" duration="147000" />
+      <workItem from="1684400996496" duration="4306000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="743" y="311" width="424" height="491" key="FileChooserDialogImpl" timestamp="1616154359918">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="743" y="311" width="424" height="491" key="FileChooserDialogImpl/0.27.1920.1053@0.27.1920.1053" timestamp="1616154359918" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/test_py$main.coverage" NAME="main Coverage Results" MODIFIED="1613640407224" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
